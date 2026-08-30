@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎂 Magical Birthday</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#03020b;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+    transition:background 2s ease;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+    radial-gradient(circle at 20% 20%,#7b21ff55,transparent 25%),
+    radial-gradient(circle at 80% 25%,#ff168c44,transparent 25%),
+    radial-gradient(circle at 50% 90%,#174cff44,transparent 30%),
+    #03020b;
+}
+
+canvas{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:9000;
+}
+
+
+/* ================= INTRO ================= */
+
+#intro{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle,
+        #32124f,
+        #05020c 70%
+    );
+
+    transition:1.2s;
+}
+
+.intro-card{
+
+    width:min(90%,560px);
+
+    padding:55px 30px;
+
+    border-radius:35px;
+
+    background:#ffffff0b;
+
+    border:1px solid #ffffff25;
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+    0 0 80px #ff2eaa33;
+}
+
+.intro-emoji{
+    font-size:85px;
+    animation:bounce 2s infinite;
+}
+
+.intro-card h1{
+
+    margin:20px 0 10px;
+
+    font-size:
+    clamp(35px,7vw,60px);
+
+    color:#ffb8e8;
+}
+
+.intro-card p{
+
+    color:#bbb;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+}
+
+.open{
+
+    padding:16px 35px;
+
+    border:0;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:18px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff249d,
+        #7545ff
+    );
+
+    box-shadow:
+    0 0 35px #ff249d66;
+
+    transition:.4s;
+}
+
+.open:hover{
+    transform:scale(1.08);
+}
+
+@keyframes bounce{
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+
+/* ================= NAV ================= */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    padding:18px 7%;
+
+    z-index:500;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#03020bcc;
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:
+    1px solid #ffffff14;
+}
+
+.logo{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#ff9ddd;
+}
+
+nav a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff7bd0;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+    120px 20px 60px;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border:
+    1px solid #ffffff25;
+
+    border-radius:50px;
+
+    background:#ffffff08;
+
+    color:#ffc7ed;
+
+    letter-spacing:3px;
+}
+
+.hero h1{
+
+    font-size:
+    clamp(60px,11vw,135px);
+
+    line-height:.9;
+
+    margin:30px 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff3ba9,
+        #fff,
+        #ffd65c,
+        #ff3ba9
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+    gradient 5s linear infinite;
+}
+
+@keyframes gradient{
+
+    to{
+        background-position:300%;
+    }
+
+}
+
+.hero h2{
+
+    font-size:
+    clamp(28px,5vw,55px);
+
+    color:#ffb5e6;
+
+    text-shadow:
+    0 0 25px #ff3cae88;
+}
+
+.hero p{
+
+    max-width:720px;
+
+    margin:25px auto;
+
+    color:#cfcfcf;
+
+    line-height:1.9;
+
+    font-size:18px;
+}
+
+.btn{
+
+    display:inline-block;
+
+    margin:8px;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    border:
+    1px solid #ffffff22;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff269f,
+        #6548ff
+    );
+
+    box-shadow:
+    0 0 30px #ff269f44;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 0 50px #ff269f77;
+}
+
+
+/* ================= 3D CAKE ================= */
+
+.cake-scene{
+
+    width:220px;
+
+    height:210px;
+
+    margin:
+    55px auto 20px;
+
+    perspective:700px;
+}
+
+.cake{
+
+    position:relative;
+
+    width:190px;
+
+    height:130px;
+
+    margin:auto;
+
+    transform-style:preserve-3d;
+
+    animation:
+    cakeFloat 3s infinite ease-in-out;
+}
+
+@keyframes cakeFloat{
+
+    50%{
+        transform:
+        translateY(-12px)
+        rotateY(8deg);
+    }
+
+}
+
+.cake-bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:190px;
+
+    height:100px;
+
+    border-radius:
+    15px 15px 35px 35px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #9e185f,
+        #ff4cad,
+        #b51d70
+    );
+
+    box-shadow:
+    0 20px 40px #ff2e9c55,
+    inset 0 10px 15px #ffffff22;
+}
+
+.cake-cream{
+
+    position:absolute;
+
+    top:30px;
+
+    left:5px;
+
+    width:180px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    background:#fff0fa;
+}
+
+.cake-top{
+
+    position:absolute;
+
+    top:12px;
+
+    left:10px;
+
+    width:170px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#ff9bd8;
+}
+
+.candle{
+
+    position:absolute;
+
+    top:-55px;
+
+    left:88px;
+
+    width:14px;
+
+    height:60px;
+
+    border-radius:4px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #fff 0 8px,
+        #ff65b5 8px 16px
+    );
+}
+
+.flame{
+
+    position:absolute;
+
+    top:-30px;
+
+    left:-6px;
+
+    width:26px;
+
+    height:35px;
+
+    border-radius:
+    50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    background:#ffd43b;
+
+    box-shadow:
+    0 0 20px #ffd43b,
+    0 0 50px #ff7a00;
+
+    animation:
+    fire .5s infinite alternate;
+}
+
+@keyframes fire{
+
+    to{
+        transform:
+        rotate(-45deg)
+        scale(1.18);
+    }
+
+}
+
+
+/* ================= SECTION ================= */
+
+section{
+    padding:110px 7%;
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-size:
+    clamp(35px,5vw,55px);
+
+    color:#ffb9e8;
+
+    margin-bottom:55px;
+}
+
+
+/* ================= GLASS ================= */
+
+.glass{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:50px 35px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff0c,
+        #ff249d08
+    );
+
+    border:
+    1px solid #ffffff20;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 30px 80px #00000055;
+}
+
+.glass h3{
+
+    font-size:35px;
+
+    color:#ffc3eb;
+
+    margin-bottom:25px;
+}
+
+.glass p{
+
+    color:#ddd;
+
+    line-height:2;
+
+    font-size:18px;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(230px,1fr)
+    );
+
+    gap:25px;
+}
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:#ffffff08;
+
+    border:
+    1px solid #ffffff1b;
+
+    transition:.5s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-12px)
+    rotateX(4deg);
+
+    box-shadow:
+    0 25px 60px #ff2c9d22;
+}
+
+.card-icon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+
+    color:#ffc1e9;
+
+    margin-bottom:15px;
+}
+
+.card p{
+
+    color:#aaa;
+
+    line-height:1.7;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-frame{
+
+    max-width:850px;
+
+    height:480px;
+
+    margin:auto;
+
+    padding:12px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff42ae,
+        #6f48ff,
+        #ffd25a,
+        #ff42ae
+    );
+
+    background-size:300%;
+
+    animation:
+    borderMove 6s linear infinite;
+}
+
+@keyframes borderMove{
+
+    to{
+        background-position:300%;
+    }
+
+}
+
+.photo-inner{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:25px;
+
+    background:#08040e;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.photo-inner img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+.photo-placeholder{
+
+    text-align:center;
+
+    color:#888;
+}
+
+.photo-placeholder div{
+    font-size:80px;
+}
+
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.timeline-item{
+
+    display:flex;
+
+    gap:25px;
+
+    margin-bottom:30px;
+}
+
+.timeline-icon{
+
+    min-width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff319f,
+        #6548ff
+    );
+
+    font-size:25px;
+}
+
+.timeline-text{
+
+    padding:20px 25px;
+
+    border-radius:20px;
+
+    background:#ffffff08;
+
+    border:
+    1px solid #ffffff16;
+
+    flex:1;
+}
+
+.timeline-text h3{
+
+    color:#ffb6e6;
+
+    margin-bottom:8px;
+}
+
+.timeline-text p{
+
+    color:#aaa;
+
+    line-height:1.6;
+}
+
+
+/* ================= SECRET ================= */
+
+.secret-container{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.secret-subtitle{
+
+    color:#aaa;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+}
+
+.capsule{
+
+    position:relative;
+
+    width:210px;
+
+    height:250px;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    transition:.7s;
+}
+
+.capsule:hover{
+
+    transform:
+    translateY(-15px)
+    rotate(3deg)
+    scale(1.05);
+}
+
+.capsule-glow{
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:#ff2ca855;
+
+    filter:blur(50px);
+
+    animation:
+    secretGlow 2s infinite alternate;
+}
+
+@keyframes secretGlow{
+
+    from{
+        transform:scale(.8);
+        opacity:.4;
+    }
+
+    to{
+        transform:scale(1.2);
+        opacity:.9;
+    }
+
+}
+
+.capsule-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:20px;
+
+    width:170px;
+
+    height:180px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4db1,
+        #762cff,
+        #29156b
+    );
+
+    border:
+    2px solid #ffffff44;
+
+    box-shadow:
+    inset 0 0 30px #ffffff22,
+    0 0 50px #ff38ac66;
+}
+
+.capsule-top{
+
+    position:absolute;
+
+    z-index:3;
+
+    top:0;
+
+    left:55px;
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #fff,
+        #ff8fd2 35%,
+        #7131ff 70%
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    box-shadow:
+    0 0 35px #ff8fd2,
+    inset 0 0 20px white;
+}
+
+.lock{
+
+    font-size:55px;
+
+    padding-top:50px;
+
+    animation:
+    lockPulse 1.5s infinite;
+}
+
+@keyframes lockPulse{
+
+    50%{
+        transform:scale(1.15);
+    }
+
+}
+
+.capsule-text{
+
+    margin-top:15px;
+
+    letter-spacing:5px;
+
+    color:#ffd8ef;
+
+    font-weight:bold;
+}
+
+#clickText{
+
+    margin-top:30px;
+
+    color:#ffb5e5;
+
+    animation:
+    pulseText 1.5s infinite;
+}
+
+@keyframes pulseText{
+
+    50%{
+        opacity:.4;
+    }
+
+}
+
+
+/* ================= SECRET MESSAGE ================= */
+
+#secretMessage{
+
+    display:none;
+
+    margin-top:50px;
+
+    padding:50px 30px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff3da915,
+        #6b39ff15
+    );
+
+    border:
+    1px solid #ffffff25;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 80px #ff32a933;
+
+    animation:
+    messageOpen 1s ease;
+}
+
+@keyframes messageOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.7)
+        translateY(50px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+    }
+
+}
+
+.message-icon{
+
+    font-size:70px;
+
+    animation:
+    heartBeat 1s infinite;
+}
+
+@keyframes heartBeat{
+
+    50%{
+        transform:scale(1.25);
+    }
+
+}
+
+#secretMessage h3{
+
+    font-size:40px;
+
+    margin:
+    15px 0 25px;
+
+    color:#ffc2eb;
+}
+
+#typing{
+
+    min-height:150px;
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#ddd;
+
+    font-size:19px;
+
+    line-height:2;
+
+    white-space:pre-line;
+}
+
+.final-line{
+
+    margin-top:30px;
+
+    font-size:28px;
+
+    color:#ffb5e5;
+
+    text-shadow:
+    0 0 20px #ff39a8;
+}
+
+.magic-btn{
+
+    margin-top:30px;
+
+    padding:14px 28px;
+
+    border:
+    1px solid #ffffff33;
+
+    border-radius:50px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff2d9f,
+        #703dff
+    );
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    box-shadow:
+    0 0 30px #ff2d9f55;
+
+    transition:.4s;
+}
+
+.magic-btn:hover{
+    transform:scale(1.08);
+}
+
+
+/* ================= MAGICAL MODE ================= */
+
+.magical-mode{
+
+    background:
+    radial-gradient(
+        circle at 50% 40%,
+        #35116d,
+        #09001b 45%,
+        #020106
+    );
+}
+
+
+/* ================= MAGIC REVEAL ================= */
+
+#magicReveal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99990;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transform:scale(.5);
+
+    transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
+
+    background:
+    radial-gradient(
+        circle,
+        #ff32ad22,
+        transparent 65%
+    );
+}
+
+#magicReveal.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.magic-content{
+
+    position:relative;
+
+    max-width:850px;
+
+    padding:30px;
+}
+
+.magic-heart{
+
+    font-size:
+    clamp(100px,25vw,250px);
+
+    animation:
+    magicHeart 1.5s infinite;
+
+    filter:
+    drop-shadow(0 0 30px #ff37b0)
+    drop-shadow(0 0 80px #ff37b0);
+}
+
+@keyframes magicHeart{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+}
+
+.magic-content h1{
+
+    margin-top:20px;
+
+    font-size:
+    clamp(35px,7vw,75px);
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff75c8,
+        white,
+        #ffd45c,
+        #ff75c8
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+    magicGradient 4s linear infinite;
+}
+
+@keyframes magicGradient{
+
+    to{
+        background-position:300%;
+    }
+
+}
+
+.magic-content p{
+
+    margin-top:20px;
+
+    color:#ddd;
+
+    font-size:
+    clamp(16px,3vw,23px);
+
+    line-height:1.8;
+}
+
+.magic-ring{
+
+    position:absolute;
+
+    left:50%;
+
+    top:170px;
+
+    transform:translateX(-50%);
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    border:
+    2px solid #ffffff55;
+
+    box-shadow:
+    0 0 30px #ff4ab5,
+    inset 0 0 30px #7b42ff;
+
+    animation:
+    ringRotate 8s linear infinite;
+}
+
+@keyframes ringRotate{
+
+    to{
+        transform:
+        translateX(-50%)
+        rotate(360deg);
+    }
+
+}
+
+.magic-close{
+
+    margin-top:30px;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    border:
+    1px solid #ffffff33;
+
+    background:#ffffff12;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* ================= MAGIC STARS ================= */
+
+.magic-star{
+
+    position:fixed;
+
+    z-index:99995;
+
+    pointer-events:none;
+
+    font-size:15px;
+
+    animation:
+    starMagic 4s ease-out forwards;
+}
+
+@keyframes starMagic{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        scale(.2)
+        rotate(0deg);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        scale(2)
+        rotate(360deg);
+    }
+
+}
+
+
+/* ================= FALLING ================= */
+
+.fall{
+
+    position:fixed;
+
+    top:-60px;
+
+    z-index:800;
+
+    pointer-events:none;
+
+    animation:
+    fall linear forwards;
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
+    }
+
+}
+
+.heart{
+
+    position:fixed;
+
+    bottom:-60px;
+
+    z-index:9991;
+
+    pointer-events:none;
+
+    animation:
+    heartUp linear forwards;
+}
+
+@keyframes heartUp{
+
+    to{
+
+        transform:
+        translateY(-115vh)
+        rotate(20deg);
+
+        opacity:0;
+    }
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    border-top:
+    1px solid #ffffff15;
+
+    color:#888;
+}
+
+footer strong{
+
+    color:#ff9cdc;
+
+    font-size:22px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .glass{
+        padding:35px 20px;
+    }
+
+    .photo-frame{
+        height:330px;
+    }
+
+    .timeline-item{
+        gap:12px;
+    }
+
+    .timeline-icon{
+        min-width:50px;
+        height:50px;
+    }
+
+    #secretMessage{
+        padding:35px 20px;
+    }
+
+    .magic-ring{
+        width:220px;
+        height:220px;
+        top:120px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= INTRO ================= -->
+
+<div id="intro">
+
+    <div class="intro-card">
+
+        <div class="intro-emoji">
+            🎁
+        </div>
+
+        <h1>
+            A Special Surprise
+        </h1>
+
+        <p>
+            এই ছোট্ট website-টা একজন
+            খুব special মানুষের জন্য তৈরি।
+            💖
+        </p>
+
+        <button
+            class="open"
+            onclick="openWebsite()">
+
+            💌 Open Surprise
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CANVAS ================= -->
+
+<canvas id="fireworks"></canvas>
+
+
+<!-- ================= NAV ================= -->
+
+<nav>
+
+    <div class="logo">
+        🎂 Birthday
+    </div>
+
+    <div class="links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#wish">
+            Wish
+        </a>
+
+        <a href="#memory">
+            Memory
+        </a>
+
+        <a href="#gift">
+            Secret
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section
+    class="hero"
+    id="home">
+
+<div class="hero-content">
+
+    <span class="badge">
+
+        ✨ TODAY IS YOUR SPECIAL DAY ✨
+
+    </span>
+
+
+    <h1>
+
+        HAPPY<br>
+        BIRTHDAY
+
+    </h1>
+
+
+    <!-- onamika akter vabna -->
+
+    <h2>
+
+        💖 Dear Sister 💖
+
+    </h2>
+
+
+    <p>
+
+        আজকের এই সুন্দর দিনটা
+        শুধু তোমার জন্য।
+
+        তোমার জীবন আনন্দ,
+        ভালোবাসা, শান্তি এবং
+        সাফল্যে ভরে উঠুক। 🌸
+
+    </p>
+
+
+    <!-- CAKE -->
+
+    <div class="cake-scene">
+
+        <div class="cake">
+
+            <div class="cake-bottom"></div>
+
+            <div class="cake-top"></div>
+
+            <div class="cake-cream"></div>
+
+            <div class="candle">
+
+                <div class="flame"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <a
+        class="btn"
+        href="#wish">
+
+        💌 Read My Wish
+
+    </a>
+
+
+    <button
+        class="btn"
+        onclick="celebrate()">
+
+        🎆 Celebrate
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ================= WISH ================= -->
+
+<section id="wish">
+
+<h2 class="section-title">
+
+    💖 A Letter For You
+
+</h2>
+
+
+<div class="glass">
+
+    <h3>
+
+        Dear Sister 🌸
+
+    </h3>
+
+
+    <p>
+
+        শুভ জন্মদিন! 🎂💖
+
+        <br><br>
+
+        তোমার জীবনের প্রতিটি সকাল
+        হোক নতুন আশার আলোয় ভরা।
+
+        প্রতিটি দিন নিয়ে আসুক
+        নতুন আনন্দ, নতুন স্বপ্ন
+        এবং নতুন সাফল্য।
+
+        <br><br>
+
+        তোমার মুখের সুন্দর হাসিটা
+        যেন কখনো হারিয়ে না যায়।
+
+        তুমি জীবনে অনেক দূর এগিয়ে যাও
+        এবং তোমার প্রতিটি স্বপ্ন পূরণ হোক।
+
+        <br><br>
+
+        তোমার জন্য রইলো অনেক ভালোবাসা,
+        দোয়া এবং অসংখ্য শুভকামনা। 🌷
+
+        <br><br>
+
+        <strong>
+
+            HAPPY BIRTHDAY,
+            DEAR SISTER! 🎂💖
+
+        </strong>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= CARDS ================= -->
+
+<section>
+
+<h2 class="section-title">
+
+    ✨ My Wishes For You
+
+</h2>
+
+
+<div class="cards">
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            🌸
+        </div>
+
+        <h3>
+            Happiness
+        </h3>
+
+        <p>
+            তোমার প্রতিটি দিন আনন্দ
+            আর সুন্দর মুহূর্তে ভরে উঠুক।
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            ✨
+        </div>
+
+        <h3>
+            Success
+        </h3>
+
+        <p>
+            তোমার সব স্বপ্ন পূরণ হোক
+            এবং তুমি জীবনে অনেক দূর যাও।
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            💖
+        </div>
+
+        <h3>
+            Love
+        </h3>
+
+        <p>
+            পরিবার ও প্রিয় মানুষদের
+            ভালোবাসা সবসময় তোমার
+            সাথে থাকুক।
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-icon">
+            🌈
+        </div>
+
+        <h3>
+            Beautiful Life
+        </h3>
+
+        <p>
+            তোমার ভবিষ্যৎ হোক সুন্দর,
+            উজ্জ্বল এবং রঙিন।
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= PHOTO ================= -->
+
+<section id="memory">
+
+<h2 class="section-title">
+
+    📸 Beautiful Memory
+
+</h2>
+
+
+<div class="photo-frame">
+
+    <div class="photo-inner">
+
+
+        <!--
+
+        ছবি দিতে চাইলে নিচের অংশ
+        মুছে এটা ব্যবহার করো:
+
+        <img src="sister.jpg">
+
+        -->
+
+
+        <div class="photo-placeholder">
+
+            <div>
+                📷
+            </div>
+
+            <h3>
+                Your Beautiful Photo
+            </h3>
+
+            <p></p>
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TIMELINE ================= -->
+
+<section>
+
+<h2 class="section-title">
+
+    🌸 A Beautiful Journey
+
+</h2>
+
+
+<div class="timeline">
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-icon">
+            🌱
+        </div>
+
+        <div class="timeline-text">
+
+            <h3>
+                Beautiful Beginning
+            </h3>
+
+            <p>
+                জীবনের প্রতিটি নতুন শুরু
+                নতুন সম্ভাবনা নিয়ে আসে।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-icon">
+            ✨
+        </div>
+
+        <div class="timeline-text">
+
+            <h3>
+                Beautiful Memories
+            </h3>
+
+            <p>
+                হাসি, আনন্দ আর সুন্দর
+                স্মৃতিগুলো জীবনের সবচেয়ে
+                মূল্যবান অংশ।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-icon">
+            🚀
+        </div>
+
+        <div class="timeline-text">
+
+            <h3>
+                Bright Future
+            </h3>
+
+            <p>
+                সামনে তোমার জন্য অপেক্ষা
+                করছে আরও অনেক সুন্দর দিন।
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= LAST SECRET ================= -->
+
+<section id="gift">
+
+<h2 class="section-title">
+
+    🌙 One Last Secret
+
+</h2>
+
+
+<div class="secret-container">
+
+
+    <div class="secret-subtitle">
+
+        🔐 A little secret
+        is waiting for you...
+
+    </div>
+
+
+    <!-- CAPSULE -->
+
+    <div
+        class="capsule"
+        onclick="openSecret()">
+
+
+        <div class="capsule-glow"></div>
+
+
+        <div class="capsule-top">
+
+            ✨
+
+        </div>
+
+
+        <div class="capsule-body">
+
+
+            <div class="lock">
+
+                🔒
+
+            </div>
+
+
+            <div class="capsule-text">
+
+                SECRET
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <p id="clickText">
+
+        ✨ Touch the secret capsule ✨
+
+    </p>
+
+
+    <!-- SECRET MESSAGE -->
+
+    <div id="secretMessage">
+
+
+        <div class="message-icon">
+
+            💖
+
+        </div>
+
+
+        <h3>
+
+            You Are Special
+
+        </h3>
+
+
+        <div id="typing"></div>
+
+
+        <div class="final-line">
+
+            🎂 HAPPY BIRTHDAY 🎂
+
+        </div>
+
+
+        <button
+            class="magic-btn"
+            onclick="finalMagic()">
+
+            ✨ Make It Magical
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= MAGIC REVEAL ================= -->
+
+<div id="magicReveal">
+
+
+    <div class="magic-content">
+
+
+        <div class="magic-ring"></div>
+
+
+        <div class="magic-heart">
+
+            💖
+
+        </div>
+
+
+        <h1>
+
+            You Are One of a Kind ✨
+
+        </h1>
+
+
+        <p>
+
+            পৃথিবীতে অনেক মানুষ আসে,
+
+            <br>
+
+            কিন্তু কিছু মানুষ
+            <strong>
+                মনে থেকে যায়।
+            </strong>
+
+            💫
+
+        </p>
+
+
+        <p>
+
+            আজকের এই দিনটা
+            তোমার মতোই সুন্দর হোক। 🌸
+
+        </p>
+
+
+        <button
+            class="magic-close"
+            onclick="closeMagic()">
+
+            💫 Keep This Memory
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    Made with 💖
+    for a very special sister
+
+    <br><br>
+
+    <strong>
+
+        🎂 HAPPY BIRTHDAY 🎂
+
+    </strong>
+
+</footer>
+
+
+<script>
+
+
+/* ================= INTRO ================= */
+
+function openWebsite(){
+
+    const intro=
+        document.getElementById("intro");
+
+    intro.style.opacity="0";
+
+
+    setTimeout(()=>{
+
+        intro.style.display="none";
+
+        celebrate();
+
+        fireworks();
+
+    },1200);
+
+}
+
+
+/* ================= CELEBRATE ================= */
+
+function celebrate(){
+
+    const emojis=[
+
+        "💖",
+        "💕",
+        "✨",
+        "🎉",
+        "🎊",
+        "🌸",
+        "⭐",
+        "🎈",
+        "💗",
+        "🥳",
+        "🌷"
+
+    ];
+
+
+    for(let i=0;i<100;i++){
+
+        const x=
+            document.createElement("div");
+
+
+        x.className="fall";
+
+
+        x.innerHTML=
+            emojis[
+                Math.floor(
+                    Math.random()*
+                    emojis.length
+                )
+            ];
+
+
+        x.style.left=
+            Math.random()*100+"vw";
+
+
+        x.style.fontSize=
+            15+
+            Math.random()*35+
+            "px";
+
+
+        x.style.animationDuration=
+            3+
+            Math.random()*5+
+            "s";
+
+
+        document.body.appendChild(x);
+
+
+        setTimeout(()=>{
+
+            x.remove();
+
+        },9000);
+
+    }
+
+}
+
+
+/* ================= HEARTS ================= */
+
+function createHearts(){
+
+    for(let i=0;i<12;i++){
+
+        const h=
+            document.createElement("div");
+
+
+        h.className="heart";
+
+
+        h.innerHTML=
+            ["💖","💕","💗","💓"]
+            [
+                Math.floor(
+                    Math.random()*4
+                )
+            ];
+
+
+        h.style.left=
+            Math.random()*100+"vw";
+
+
+        h.style.fontSize=
+            15+
+            Math.random()*30+
+            "px";
+
+
+        h.style.animationDuration=
+            5+
+            Math.random()*6+
+            "s";
+
+
+        document.body.appendChild(h);
+
+
+        setTimeout(()=>{
+
+            h.remove();
+
+        },11000);
+
+    }
+
+}
+
+setInterval(
+    createHearts,
+    3000
+);
+
+
+/* ================= SECRET ================= */
+
+function openSecret(){
+
+    const capsule=
+        document.querySelector(
+            ".capsule"
+        );
+
+
+    const clickText=
+        document.getElementById(
+            "clickText"
+        );
+
+
+    const message=
+        document.getElementById(
+            "secretMessage"
+        );
+
+
+    capsule.style.transform=
+        "scale(0) rotate(360deg)";
+
+
+    capsule.style.opacity="0";
+
+
+    clickText.style.display=
+        "none";
+
+
+    setTimeout(()=>{
+
+        message.style.display=
+            "block";
+
+
+        startTyping();
+
+
+        celebrate();
+
+
+        fireworks();
+
+    },700);
+
+}
+
+
+/* ================= TYPING ================= */
+
+function startTyping(){
+
+    const text=
+`আজকের দিনে তোমাকে শুধু একটা কথাই বলতে চাই...
+
+তুমি যেমন আছো,
+ঠিক তেমনই সুন্দর থেকো। 🌸
+
+জীবনের প্রতিটি পথে তোমার সাথে থাকুক
+সুখ, শান্তি আর সাফল্য।
+
+তোমার সব স্বপ্ন একদিন সত্যি হোক।
+আর তোমার মুখের হাসিটা যেন
+কখনো হারিয়ে না যায়। 💖
+
+তোমার জন্য অনেক অনেক শুভকামনা... ✨`;
+
+
+    const box=
+        document.getElementById(
+            "typing"
+        );
+
+
+    let i=0;
+
+
+    box.innerHTML="";
+
+
+    function type(){
+
+        if(i<text.length){
+
+            box.innerHTML+=
+                text.charAt(i);
+
+
+            i++;
+
+
+            setTimeout(
+                type,
+                35
+            );
+
+        }
+
+    }
+
+
+    type();
+
+}
+
+
+/* ================= MAKE IT MAGICAL ================= */
+
+function finalMagic(){
+
+    document.body.classList.add(
+        "magical-mode"
+    );
+
+
+    fireworks();
+
+
+    setTimeout(()=>{
+        fireworks();
+    },1000);
+
+
+    setTimeout(()=>{
+        fireworks();
+    },2200);
+
+
+    /* MAGIC STARS */
+
+    for(let i=0;i<100;i++){
+
+        setTimeout(()=>{
+
+            const star=
+                document.createElement(
+                    "div"
+                );
+
+
+            star.innerHTML=
+                ["✨","⭐","💫","🌟"]
+                [
+                    Math.floor(
+                        Math.random()*4
+                    )
+                ];
+
+
+            star.className=
+                "magic-star";
+
+
+            star.style.left=
+                Math.random()*100+
+                "vw";
+
+
+            star.style.top=
+                Math.random()*100+
+                "vh";
+
+
+            document.body.appendChild(
+                star
+            );
+
+
+            setTimeout(()=>{
+
+                star.remove();
+
+            },4000);
+
+        },i*25);
+
+    }
+
+
+    /* HEART BURST */
+
+    for(let i=0;i<60;i++){
+
+        setTimeout(()=>{
+
+            createHeartBurst();
+
+        },i*45);
+
+    }
+
+
+    /* REVEAL */
+
+    setTimeout(()=>{
+
+        const reveal=
+            document.getElementById(
+                "magicReveal"
+            );
+
+
+        reveal.classList.add(
+            "show"
+        );
+
+    },1800);
+
+}
+
+
+/* ================= HEART BURST ================= */
+
+function createHeartBurst(){
+
+    const heart=
+        document.createElement(
+            "div"
+        );
+
+
+    heart.innerHTML=
+        ["💖","💗","💕","✨","🌸"]
+        [
+            Math.floor(
+                Math.random()*5
+            )
+        ];
+
+
+    heart.style.position=
+        "fixed";
+
+
+    heart.style.left=
+        "50vw";
+
+
+    heart.style.top=
+        "55vh";
+
+
+    heart.style.zIndex=
+        "99999";
+
+
+    heart.style.fontSize=
+        15+
+        Math.random()*30+
+        "px";
+
+
+    heart.style.pointerEvents=
+        "none";
+
+
+    heart.style.transition=
+        "1.5s ease-out";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(()=>{
+
+        heart.style.transform=
+        `translate(
+            ${(Math.random()-.5)*700}px,
+            ${(Math.random()-.5)*600}px
+        ) scale(.2)`;
+
+
+        heart.style.opacity="0";
+
+
+    },30);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },1600);
+
+}
+
+
+/* ================= CLOSE MAGIC ================= */
+
+function closeMagic(){
+
+    const reveal=
+        document.getElementById(
+            "magicReveal"
+        );
+
+
+    reveal.classList.remove(
+        "show"
+    );
+
+
+    setTimeout(()=>{
+
+        document.body.classList.remove(
+            "magical-mode"
+        );
+
+    },1500);
+
+}
+
+
+/* ================= FIREWORKS ================= */
+
+const canvas=
+    document.getElementById(
+        "fireworks"
+    );
+
+
+const ctx=
+    canvas.getContext("2d");
+
+
+function resizeCanvas(){
+
+    canvas.width=
+        window.innerWidth;
+
+
+    canvas.height=
+        window.innerHeight;
+
+}
+
+
+resizeCanvas();
+
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+let particles=[];
+
+
+function createFirework(x,y){
+
+    for(let i=0;i<65;i++){
+
+        const angle=
+            Math.PI*2*i/65;
+
+
+        const speed=
+            2+
+            Math.random()*5;
+
+
+        particles.push({
+
+            x:x,
+
+            y:y,
+
+            vx:
+            Math.cos(angle)*
+            speed,
+
+            vy:
+            Math.sin(angle)*
+            speed,
+
+            life:100,
+
+            size:
+            Math.random()*3+1
+
+        });
+
+    }
+
+}
+
+
+function animateFireworks(){
+
+    ctx.clearRect(
+
+        0,
+        0,
+        canvas.width,
+        canvas.height
+
+    );
+
+
+    particles.forEach(
+        (p,index)=>{
+
+        p.x+=p.vx;
+
+        p.y+=p.vy;
+
+        p.vy+=.04;
+
+        p.life--;
+
+
+        ctx.globalAlpha=
+            p.life/100;
+
+
+        ctx.fillStyle=
+            "white";
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI*2
+
+        );
+
+
+        ctx.fill();
+
+
+        if(p.life<=0){
+
+            particles.splice(
+                index,
+                1
+            );
+
+        }
+
+    });
+
+
+    requestAnimationFrame(
+        animateFireworks
+    );
+
+}
+
+
+animateFireworks();
+
+
+function fireworks(){
+
+    for(let i=0;i<7;i++){
+
+        setTimeout(()=>{
+
+            createFirework(
+
+                80+
+                Math.random()*
+                (
+                    window.innerWidth-160
+                ),
+
+                80+
+                Math.random()*
+                (
+                    window.innerHeight*.45
+                )
+
+            );
+
+        },i*450);
+
+    }
+
+}
+
+
+/* ================= CLICK SPARKLES ================= */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        for(let i=0;i<7;i++){
+
+            const s=
+                document.createElement(
+                    "div"
+                );
+
+
+            s.innerHTML="✨";
+
+
+            s.style.position=
+                "fixed";
+
+
+            s.style.left=
+                e.clientX+"px";
+
+
+            s.style.top=
+                e.clientY+"px";
+
+
+            s.style.zIndex=
+                "99999";
+
+
+            s.style.pointerEvents=
+                "none";
+
+
+            s.style.fontSize=
+                "20px";
+
+
+            s.style.transition=
+                "1s";
+
+
+            document.body.appendChild(
+                s
+            );
+
+
+            setTimeout(()=>{
+
+                s.style.transform=
+                `translate(
+                    ${(Math.random()-.5)*160}px,
+                    ${(Math.random()-.5)*160}px
+                )`;
+
+
+                s.style.opacity="0";
+
+
+            },20);
+
+
+            setTimeout(()=>{
+
+                s.remove();
+
+            },1000);
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
